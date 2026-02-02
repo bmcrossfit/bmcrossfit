@@ -1,0 +1,14 @@
+/* Reuse styles from AddClient for consistency */
+@import '../AddClient/AddClient.css';
+
+.edit-client-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.edit-client-title {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

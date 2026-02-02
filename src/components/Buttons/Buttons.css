@@ -1,0 +1,80 @@
+/* Buttons.css */
+.buttons-container {
+  display: flex;
+  gap: 6px;
+  /* Estilos para filas según estado */
+  /* (Removed inline editing styles) */
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  gap: 8px;
+  /* Add gap globally for icon + label */
+}
+
+/* ... (colors remain same but can be tweaked if needed, keeping simple matching for now) ... */
+/* Botones principales */
+.btn-edit {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+}
+
+.btn-extend {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  padding: 8px 12px;
+  /* A bit wider for text */
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .buttons-container {
+    flex-direction: row;
+    /* Keep row even on smaller screens if possible, or wrap */
+    flex-wrap: wrap;
+  }
+}
+
+.btn-label {
+  display: inline-block;
+  font-size: 0.9rem;
+  background-color: transparent;
+}
+
+/* Mobile/Tablet Card View Styles (< 920px matching Table.css) */
+@media (max-width: 920px) {
+  .buttons-container {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn {
+    flex: 1;
+    /* Equal width for all buttons */
+    padding: 10px;
+    height: auto;
+    /* Adjust height */
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* .btn-label styles inherited from global */
+}

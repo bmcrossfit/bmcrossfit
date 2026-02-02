@@ -1,0 +1,513 @@
+/* Contenedor Principal */
+.routine-manager {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.routine-content>* {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.routine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.routine-header h2 {
+    color: #fff;
+}
+
+.routine-tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #94a3b8;
+    /* Slate-400 */
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #e2e8f0;
+    /* Slate-200 */
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-weight: 500;
+    /* Medium en vez de Bold para menos salto */
+    border-bottom: 2px solid #ffffff;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: #fff;
+}
+
+/* Exercise List */
+.add-exercise-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.exercise-input {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    flex: 2;
+    color: #fff;
+}
+
+.exercise-input.small {
+    flex: 1;
+}
+
+.add-btn {
+    background-color: #0f172a;
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.exercise-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.exercise-info h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.exercise-details {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+/* Weekly View */
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.day-column {
+    border: 1px solid #f8fafc;
+    border-radius: 12px;
+    padding: 1rem;
+    height: 100%;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.day-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.add-day-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #475569;
+}
+
+.add-day-btn:hover {
+    background: #cbd5e1;
+    color: #1e293b;
+}
+
+.routine-item {
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    font-size: 0.9rem;
+}
+
+.routine-item-info strong {
+    color: #ffffff;
+}
+
+.small-details {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    color: #ffffff;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 0.5;
+    padding: 0 0 0 0.5rem;
+}
+
+.remove-item-btn:hover {
+    color: #ef4444;
+}
+
+.empty-day {
+    color: #94a3b8;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+/* Modal Pequeño */
+.mini-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.mini-modal {
+    border: 1px solid #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mini-modal h4 {
+    color: #fff;
+}
+
+.exercise-select {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    color: #fff;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    background-color: transparent;
+}
+
+.save-btn,
+.cancel-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: #0f172a;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background: #f1f5f9;
+}
+
+@media (max-width: 1024px) {
+    .week-grid {
+        min-width: 800px;
+        /* Permitir scroll horizontal en tablets */
+    }
+}
+
+/* Toolbar de Rutinas */
+.routine-toolbar {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.toolbar-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.toolbar-select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    min-width: 150px;
+    color: #fff;
+}
+
+.main-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.routine-name-input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    width: 100%;
+    color: #fff;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.save-routine-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-routine-btn:hover {
+    background-color: #15803d;
+}
+
+.danger-btn {
+    background-color: #ef4444;
+    color: #fff;
+    border: 1px solid #ef4444;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.danger-btn:hover {
+    background-color: #ffffff;
+    color: #ef4444;
+    border: 1px solid #fff;
+}
+
+/* Confirmation Modal */
+.confirmation-modal {
+    max-width: 400px;
+    background-color: #0f172a;
+    /* Dark background matching user theme */
+    border: 1px solid #ffffff;
+}
+
+.modal-message {
+    background-color: transparent;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.delete-confirm-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-confirm-btn:hover {
+    background-color: #dc2626;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.routine-inputs {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.routine-inputs input {
+    width: 70px;
+    color: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+}
+
+.routine-inputs span {
+    color: #fff;
+}
+
+/* Responsive Styles for Routines */
+@media (max-width: 768px) {
+    .routine-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .routine-tabs {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .routine-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-actions {
+        margin-top: 1rem;
+        justify-content: flex-end;
+    }
+
+    .week-grid {
+        display: flex;
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .day-column {
+        min-height: 200px;
+    }
+
+    .add-exercise-form {
+        flex-direction: column;
+    }
+
+    .exercise-input {
+        width: 100%;
+    }
+
+    .add-btn {
+        padding: 0.8rem;
+        justify-content: center;
+    }
+
+    .mini-modal {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Keep the tablet horizontal scroll if preferred, or override above */
+    /* .week-grid { min-width: 800px; } -- Removing this to favor the vertical stack on mobile/tablet or just mobile */
+}
